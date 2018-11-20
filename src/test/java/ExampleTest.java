@@ -5,7 +5,6 @@ import junit.framework.JUnit4TestAdapter;
 import org.junit.*;
 import org.junit.rules.TestName;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -14,7 +13,7 @@ import java.net.URL;
 
 import static org.junit.Assert.assertEquals;
 
-public class FullPageScreenShotExampleTest {
+public class ExampleTest {
 
     @Rule
     public TestName name = new TestName() {
@@ -45,7 +44,7 @@ public class FullPageScreenShotExampleTest {
         //Hide scrollbars on older browsers. Usually IE includes them...
         eyes.setHideScrollbars(true);
         //Take a full page screenshot
-        eyes.setForceFullPageScreenshot(true);
+        eyes.setForceFullPageScreenshot(false);
         //Stitch pages together and remove floating headers and footers...
         eyes.setStitchMode(StitchMode.CSS);
         //Set match level to Layout2 for dynamic content sites.
@@ -94,6 +93,6 @@ public class FullPageScreenShotExampleTest {
     }
 
     public static void main(String[] args) {
-        junit.textui.TestRunner.run(new JUnit4TestAdapter(FullPageScreenShotExampleTest.class));
+        junit.textui.TestRunner.run(new JUnit4TestAdapter(ExampleTest.class));
     }
 }
