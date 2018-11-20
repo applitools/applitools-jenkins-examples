@@ -34,7 +34,7 @@ public class FullPageScreenShotExampleTest {
 
     @BeforeClass
     public static void batchInitialization(){
-        batch = new BatchInfo("Jenkins GitHub Example");
+        batch = new BatchInfo("Jenkins Plugin Example");
     }
 
     @Before
